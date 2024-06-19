@@ -15,7 +15,7 @@ Ce projet est un chatbot informatif sur le COVID-19 destiné aux utilisateurs au
   OPENAI_API_KEY = #add your OpenAI API key here`
 -  The Run Code by<br>
   `Python app.py`
-
+je m'appelle Ismaila GNING
  
 
 
