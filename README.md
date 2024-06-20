@@ -1,4 +1,4 @@
-# Créer un Chatbot specialisé sur la covid 19: .
+# Créer un Chatbot specialisé sur la covid 19 
 Ce projet est un chatbot informatif sur le COVID-19 destiné aux utilisateurs au Sénégal. Le chatbot peut répondre à diverses questions sur le virus, les mesures de prévention, les symptômes, les statistiques locales et d'autres informations pertinentes.
 
 
