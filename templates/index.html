@@ -1,139 +1,200 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Recipe Chatbot</title>
+<head>
+    <title>Chatbot Covid-19 au Senegal</title>
     <link rel="icon" type="image/x-icon" href="static/images/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="C'est un chatbot qui génère des rechettes sénégalaises."
-    />
-    <link rel="icon" type="image/png" href="static/images/favicon.ico" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
-    <!-- Option 1: Include in HTML -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
-    />
+    <meta name="description" content="C'est un chatbot qui génère des rechettes sénégalaises." />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
     <style>
-      .loading-message {
-        text-align: center;
-        font-style: italic;
-        color: #999;
-      }
-
-      #chat-container {
-        height: 60vh;
-        overflow-y: auto;
-      }
-
-      #user-input {
-        margin-bottom: 10px;
-      }
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar-custom {
+            background-color: #bdc3c7;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-header {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-custom img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .navbar-custom .navbar-text {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .navbar-custom .cert-icon {
+            color: #00a8ff;
+            font-size: 20px;
+        }
+        .chat-container {
+            height: 70vh;
+            overflow-y: auto;
+            background-color: #dff9fb;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .message img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .message p {
+            margin: 0;
+            padding: 10px;
+            border-radius: 20px;
+            max-width: 70%;
+        }
+        .message.user {
+            justify-content: flex-end;
+        }
+        .message.user p {
+            background-color: #7bed9f;
+            color: #fff;
+        }
+        .message.user img {
+            order: 1;
+            margin-left: 10px;
+            margin-right: 0;
+        }
+        .message.bot p {
+            background-color: #f1f0f0;
+        }
+        .input-group {
+            display: flex;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        #user-input {
+            flex: 1;
+            border: none;
+            padding: 10px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            background-color: #e9ecef;
+        }
+        #send-btn {
+            background-color: #6ab04c;
+            color: #fff;
+            border: none;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding: 10px;
+        }
+        #send-btn:hover {
+            background-color: #0056b3;
+        }
+        .response-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 20px;
+            background-color: #7efff5;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
     </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Chatbot Covid-19 au Senegal</h1>
-      <p>Avertissement : soyez patient, cela peut prendre un certain temps</p>
-      <div class="row chat-container" id="chat-container"></div>
-      <div class="row">
-        <div class="col-xs-12">
-          <input
-            type="text"
-            class="form-control"
-            id="user-input"
-            placeholder="Type your message..."
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <button class="btn btn-primary btn-block" id="send-btn">Send</button>
-        </div>
-      </div>
-      <!-- 
-        <footer class="footer">
-            <div class="footer-links">
-                <h2> Made by Fallou Diagne
-                <a href="https://www.linkedin.com/in/fallou-diagne-4b02b8214/" target="_blank"><i class="bi bi-linkedin"></i></a>
-                <a href="https://github.com/falloudiagnessm" target="_blank"><i class="bi bi-github"></i></a></h2>
+</head>
+<body>
+    <div class="navbar navbar-custom">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <img src="/Chatbot_Covid_Senegal/CHATBOT_COVID_SENEGAL/static/images/sante.jpeg" alt="Logo">
+                <span class="navbar-text">Ministère de la Santé Nationale</span>
+                <i class="bi bi-patch-check-fill cert-icon"></i>
             </div>
-        </footer>
-        -->
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="text-center">Chatbot Covid-19 au Senegal</h1>
+        <p class="text-center">Avertissement : soyez patient, cela peut prendre un certain temps</p>
+        <div id="chat-container" class="chat-container"></div>
+        <div class="response-container">
+            <input type="text" class="form-control" id="user-input" placeholder="Type your message..." />
+            <button class="btn" id="send-btn">
+                <i class="bi bi-send"></i>
+            </button>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
-      $(document).ready(function () {
-        $("#send-btn").on("click", function () {
-          sendMessage();
+        $(document).ready(function () {
+            $("#send-btn").on("click", function () {
+                sendMessage();
+            });
+
+            $("#user-input").on("keypress", function (e) {
+                if (e.which === 13) {
+                    sendMessage();
+                }
+            });
+
+            function sendMessage() {
+                var userInput = $("#user-input").val();
+                if (userInput.trim() !== "") {
+                    $("#user-input").val("");
+                    $("#chat-container").append('<div class="message user"><img src="/Chatbot_Covid_Senegal/CHATBOT_COVID_SENEGAL/static/images/user.jpeg" alt="User"><p>' + userInput + '</p></div>');
+                    scrollToBottom();
+
+                    $("#chat-container").append('<div class="message bot loading-message"><img src="/Chatbot_Covid_Senegal/CHATBOT_COVID_SENEGAL/static/images/covid.jpeg" alt="Bot"><p>Bot is typing...</p></div>');
+                    scrollToBottom();
+
+                    $.post("/chat", { text: userInput }, function (response) {
+                        $("#chat-container .loading-message").remove();
+                        $("#chat-container").append('<div class="message bot"><img src="/Chatbot_Covid_Senegal/CHATBOT_COVID_SENEGAL/static/images/covid.jpeg" alt="Bot"><p>' + response.text + '</p></div>');
+                        scrollToBottom();
+
+                        setVoice(response.voice);
+                        playNotificationSound();
+                        showNotification(response.text);
+                    });
+                }
+            }
+
+            function showNotification(message) {
+                if (Notification.permission === "granted") {
+                    var notification = new Notification("New Message", {
+                        body: message,
+                        icon: "static/images/covid.jpeg",
+                    });
+                } else if (Notification.permission !== "denied") {
+                    Notification.requestPermission().then(function (permission) {
+                        if (permission === "granted") {
+                            var notification = new Notification("New Message", {
+                                body: message,
+                                icon: "static/images/user.jpeg",
+                            });
+                        }
+                    });
+                }
+            }
+
+            function scrollToBottom() {
+                $("#chat-container").scrollTop($("#chat-container")[0].scrollHeight);
+            }
         });
-
-        $("#user-input").on("keypress", function (e) {
-          if (e.which === 13) {
-            sendMessage();
-          }
-        });
-
-        function sendMessage() {
-          var userInput = $("#user-input").val();
-          if (userInput.trim() !== "") {
-            $("#user-input").val("");
-            $("#chat-container").append(
-              '<div class="col-xs-12 text-right"><p class="alert alert-info">' +
-                userInput +
-                "</p></div>"
-            );
-            scrollToBottom();
-
-            $("#chat-container").append(
-              '<div class="col-xs-12"><p class="loading-message">Bot is typing...</p></div>'
-            );
-            scrollToBottom();
-
-            $.post("/chat", { text: userInput }, function (response) {
-              $("#chat-container .loading-message:last").remove();
-
-              $("#chat-container").append(
-                '<div class="col-xs-12 text-left"><p class="alert alert-success">' +
-                  response.text +
-                  "</p></div>"
-              );
-              scrollToBottom();
-
-              setVoice(response.voice);
-              playNotificationSound();
-              showNotification(response.text);
-            });
-          }
-        }
-
-        function showNotification(message) {
-          if (Notification.permission === "granted") {
-            var notification = new Notification("New Message", {
-              body: message,
-              icon: "{{ url_for('static', filename='img/notification-icon.png') }}",
-            });
-          } else if (Notification.permission !== "denied") {
-            Notification.requestPermission().then(function (permission) {
-              if (permission === "granted") {
-                var notification = new Notification("New Message", {
-                  body: message,
-                  icon: "{{ url_for('static', filename='img/notification-icon.png') }}",
-                });
-              }
-            });
-          }
-        }
-
-        function scrollToBottom() {
-          $("#chat-container").scrollTop($("#chat-container")[0].scrollHeight);
-        }
-      });
     </script>
-  </body>
+</body>
 </html>
