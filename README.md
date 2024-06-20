@@ -1,13 +1,15 @@
-# Créer un Chatbot specialisé sur la covid 19: .
+# Créer un Chatbot specialisé sur la covid 19 
 Ce projet est un chatbot informatif sur le COVID-19 destiné aux utilisateurs au Sénégal. Le chatbot peut répondre à diverses questions sur le virus, les mesures de prévention, les symptômes, les statistiques locales et d'autres informations pertinentes.
 
 
 
-![webview](https://github.com/alloudiagnessm/LLM_recipe_bot/blob/main/Sample_image/cap.PNG)
+![webview](https://github.com/Falloudiagnessm/CHATBOT_COVID_SENEGAL/blob/main/Sample_image/github1.PNG)
+![webview](https://github.com/Falloudiagnessm/CHATBOT_COVID_SENEGAL/blob/main/Sample_image/github2.PNG)
+![webview](https://github.com/Falloudiagnessm/CHATBOT_COVID_SENEGAL/blob/main/Sample_image/github3.PNG)
 
 # Comment excuter le projet localement:
 - clone this repository <br/>
-  `https://github.com/Falloudiagnessm/Chatbot_covid_SN.git`
+  `https://github.com/Falloudiagnessm/CHATBOT_COVID_SENEGAL.git`
 
 -  Install All The Required Libraries <br>
     `pip install - r requirements.txt`
