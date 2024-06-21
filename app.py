@@ -3,7 +3,6 @@ from flask import Flask, render_template, request, jsonify
 from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 from llama_index.core import GPTVectorStoreIndex, SimpleDirectoryReader
-import openai
 import string
 import random
 
