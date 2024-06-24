@@ -3,9 +3,9 @@ Ce projet est un chatbot informatif sur le COVID-19 destiné aux utilisateurs au
 
 
 
-![webview](https://github.com/Falloudiagnessm/CHATBOT_COVID_SENEGAL/blob/main/Sample_image/github1.PNG)
-![webview](https://github.com/Falloudiagnessm/CHATBOT_COVID_SENEGAL/blob/main/Sample_image/github2.PNG)
-![webview](https://github.com/Falloudiagnessm/CHATBOT_COVID_SENEGAL/blob/main/Sample_image/github3.PNG)
+![webview](https://github.com/Falloudiagnessm/CHATBOT_COVID_SENEGAL/blob/main/Sample_image/git_prim1.jpg)
+![webview](https://github.com/Falloudiagnessm/CHATBOT_COVID_SENEGAL/blob/main/Sample_image/git_prim2.jpg)
+ 
 
 # Comment excuter le projet localement:
 - clone this repository <br/>
@@ -17,7 +17,7 @@ Ce projet est un chatbot informatif sur le COVID-19 destiné aux utilisateurs au
   OPENAI_API_KEY = #add your OpenAI API key here`
 -  The Run Code by<br>
   `Python app.py`
-je m'appelle Ismaila GNING
+
  
 
 
